@@ -354,7 +354,7 @@ export default function ContactHero() {
                 </motion.div>
 
                 <h1 className="hero-title text-5xl md:text-7xl lg:text-8xl font-bold mb-8 bg-clip-text text-blue-200 bg-gradient-to-r from-white via-blue-300 to-white">
-                <span>Contact</span> SEU
+                    <span>Contact</span> SEU
                 </h1>
 
                 <p className="hero-subtitle text-xl md:text-2xl text-white/70 max-w-3xl mx-auto mb-12 leading-relaxed">
@@ -373,7 +373,7 @@ export default function ContactHero() {
                         </div>
                         <h3 className="text-xl font-bold mb-2 text-white">Email Us</h3>
                         <p className="text-white/80 mb-4">info@seunits.com</p>
-                        <a href="mailto:hello@seucompany.com" className="text-blue-400 hover:text-blue-300 transition-colors">
+                        <a href="mailto:info@seunits.com" className="text-blue-400 hover:text-blue-300 transition-colors">
                             Send an email →
                         </a>
                     </motion.div>
@@ -401,7 +401,16 @@ export default function ContactHero() {
                         </div>
                         <h3 className="text-xl font-bold mb-2 text-white">Live Chat</h3>
                         <p className="text-white/80 mb-4">Available 24/7</p>
-                        <button className="text-blue-400 hover:text-blue-300 transition-colors">Start chatting →</button>
+                        {/* <button className="text-blue-400 hover:text-blue-300 transition-colors">Start chatting →</button> */}
+                        <a
+                            href="https://wa.me/6351672568?text=Hi%20SEU%2C%20I%20am%20interested%20in%20your%20services.%20Can%20we%20chat%3F
+"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-400 hover:text-blue-300 transition-colors"
+                        >
+                            Start chatting →
+                        </a>
                     </motion.div>
                 </div>
             </div>

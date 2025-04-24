@@ -104,7 +104,7 @@ export default function AboutTimeline() {
     }, [])
 
     return (
-        <section ref={sectionRef} className="relative py-24 overflow-hidden">
+        <section ref={sectionRef} className="relative py-24 px-4 sm:px-6 md:px-12 lg:px-20 overflow-hidden">
             {/* Background gradient */}
             <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-blue-950/10 to-black/0"></div>
 
@@ -137,17 +137,17 @@ export default function AboutTimeline() {
                 {/* Timeline */}
                 <div ref={timelineRef} className="relative max-w-5xl mx-auto">
                     {/* Timeline line */}
-                    <div className="timeline-line absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-600 via-indigo-600 to-blue-600 transform -translate-x-1/2"></div>
+                    <div className="timeline-line absolute left-6 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-600 via-indigo-600 to-blue-600 transform md:-translate-x-1/2"></div>
 
                     {/* Timeline events */}
                     <div className="relative">
                         {timelineEvents.map((event, index) => (
                             <div
                                 key={index}
-                                className={`timeline-event relative mb-16 flex ${index % 2 === 0 ? "flex-row" : "flex-row-reverse"}`}
+                                className={`timeline-event relative mb-16 flex flex-col md:flex-row ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}
                             >
                                 {/* Event content */}
-                                <div className={`w-5/12 ${index % 2 === 0 ? "pr-8 text-right" : "pl-8"}`}>
+                                <div className={`md:w-5/12 w-full ${index % 2 === 0 ? "md:pr-8 md:text-right" : "md:pl-8 md:text-left"} text-left`}>
                                     <motion.div
                                         initial={{ opacity: 0, y: 20 }}
                                         whileInView={{ opacity: 1, y: 0 }}
@@ -155,18 +155,14 @@ export default function AboutTimeline() {
                                         viewport={{ once: true, margin: "-100px" }}
                                         className="bg-blue-900/20 backdrop-blur-sm rounded-xl border border-blue-900/30 p-6 hover:border-blue-500/30 transition-all duration-300 hover:shadow-[0_0_20px_rgba(66,99,235,0.2)]"
                                     >
-                                        <div
-                                            className={`text-blue-400 text-sm font-medium mb-2 ${index % 2 === 0 ? "text-right" : "text-left"}`}
-                                        >
-                                            {event.year}
-                                        </div>
+                                        <div className="text-blue-400 text-sm font-medium mb-2">{event.year}</div>
                                         <h3 className="text-xl font-bold mb-3 text-white">{event.title}</h3>
                                         <p className="text-white/80">{event.description}</p>
                                     </motion.div>
                                 </div>
 
                                 {/* Center dot */}
-                                <div className="absolute left-1/2 top-6 transform -translate-x-1/2">
+                                <div className="absolute md:left-1/2 left-6 md:top-6 top-0 transform md:-translate-x-1/2 -translate-y-1/2">
                                     <motion.div
                                         initial={{ scale: 0 }}
                                         whileInView={{ scale: 1 }}
@@ -178,8 +174,8 @@ export default function AboutTimeline() {
                                     </motion.div>
                                 </div>
 
-                                {/* Empty space for alternating layout */}
-                                <div className="w-5/12"></div>
+                                {/* Spacer for layout on desktop */}
+                                <div className="md:w-5/12 hidden md:block"></div>
                             </div>
                         ))}
                     </div>
