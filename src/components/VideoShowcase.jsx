@@ -216,8 +216,8 @@ export default function VideoShowcase() {
 
                         {/* Content */}
                         <div className="absolute bottom-0 left-0 w-full p-8 z-10">
-                            <h3 className="text-2xl font-bold text-white mb-2">SEU Innovation Showcase</h3>
-                            <p className="text-blue-100/70 mb-4 max-w-lg">
+                            <h3 className="text-2xl font-bold text-white mb-2 hidden sm:block">SEU Innovation Showcase</h3>
+                            <p className="text-blue-100/70 mb-4 max-w-lg hidden sm:block">
                                 Explore our innovations, solutions, and services that shape the future of digital transformation.
                             </p>
 
