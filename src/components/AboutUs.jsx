@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react"
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion"
-import { ChevronRight, Users, Target, Award, Zap } from "lucide-react"
+import { ChevronRight, Users, Target, Award, Zap, ArrowRight } from "lucide-react"
+import { Link } from "react-router-dom"
 
 export default function AboutUs() {
     const sectionRef = useRef(null)
@@ -361,16 +362,28 @@ export default function AboutUs() {
                             transition={{ duration: 0.8, delay: 0.8 }}
                             className="mt-10 flex justify-start"
                         >
-                            <motion.a
-                                href="contact"
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.98 }}
-                                className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-700 to-blue-600 text-white font-bold py-3 px-6 rounded-lg shadow-lg shadow-blue-700/30 hover:shadow-xl hover:shadow-blue-700/40 transition-all duration-300"
-                            >
-                                <span>Work With Us</span>
-                                <ChevronRight className="w-4 h-4" />
-                            </motion.a>
+                            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                                <Link
+                                    to="/contact"
+                                    onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                                    className="px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full text-white font-medium text-lg flex items-center gap-2 group transition-all duration-300 hover:shadow-[0_0_30px_rgba(66,99,235,0.5)]"
+                                >
+                                    <span>Start a Project</span>
+                                    <ArrowRight className="w-5 h-5 transform group-hover:translate-x-1 transition-transform" />
+                                </Link>
+                            </motion.div>
                         </motion.div>
+
+                        {/* <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                            <Link
+                                to="/contact"
+                                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                                className="px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full text-white font-medium text-lg flex items-center gap-2 group transition-all duration-300 hover:shadow-[0_0_30px_rgba(66,99,235,0.5)]"
+                            >
+                                <span>Start a Project</span>
+                                <ArrowRight className="w-5 h-5 transform group-hover:translate-x-1 transition-transform" />
+                            </Link>
+                        </motion.div> */}
                     </div>
                 </div>
             </div>

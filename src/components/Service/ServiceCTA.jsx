@@ -3,6 +3,7 @@ import { motion } from "framer-motion"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { ArrowRight } from "lucide-react"
+import { Link } from "react-router-dom"
 
 // Register GSAP plugins
 if (typeof window !== "undefined") {
@@ -62,7 +63,7 @@ export default function ServiceDetailCTA() {
                         how our innovative solutions can address your unique challenges.
                     </p>
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
-                        <motion.a
+                        {/* <motion.a
                             href="/contact"
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
@@ -71,7 +72,16 @@ export default function ServiceDetailCTA() {
                         >
                             <span>Get in Touch</span>
                             <ArrowRight className="w-5 h-5" />
-                        </motion.a>
+                        </motion.a> */}
+                        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                            <Link
+                                to="/contact"
+                                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                                className="px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-800 hover:from-blue-500 hover:to-blue-700 rounded-full text-white font-medium text-lg shadow-lg shadow-blue-900/30 flex items-center justify-center gap-2"
+                            >
+                                <span>Get in Touch</span>
+                            </Link>
+                        </motion.div>
                         <motion.a
                             href="/services"
                             whileHover={{ scale: 1.05 }}

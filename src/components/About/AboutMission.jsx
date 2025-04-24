@@ -114,35 +114,33 @@ export default function AboutMission() {
                         <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full mb-6"></div>
 
                         <p className="text-white/80 text-lg mb-8 leading-relaxed">
-                            Founded in 2020, SEU began with a vision to transform how brands connect with their audiences in the
-                            digital realm. What started as a small team of passionate designers and developers has evolved into a
-                            full-service digital agency with a global clientele.
+                            Founded in 2024, SEU was born out of a bold vision — to bridge the gap between creativity and technology and help brands
+                            thrive in an ever-evolving digital ecosystem. What began as a small team of innovators has quickly grown into a full-scale
+                            digital powerhouse partnering with clients worldwide.
                         </p>
 
                         <p className="text-white/80 text-lg mb-8 leading-relaxed">
-                            Our mission is to create digital solutions that not only meet but exceed client expectations. We believe
-                            in pushing boundaries, challenging conventions, and delivering results that drive real business growth.
+                            Our mission is simple: to build digital experiences that are not only visually stunning but also strategically powerful.
+                            We push the limits of innovation, challenge the status quo, and deliver cutting-edge solutions that spark growth, engagement,
+                            and long-term impact.
+                        </p>
+
+                        <p className="text-white/80 text-lg mb-8 leading-relaxed">
+                            Whether it's crafting immersive websites, developing seamless mobile apps, or engineering custom solutions powered by
+                            emerging technologies — our team is dedicated to turning ambitious ideas into digital reality.
                         </p>
 
                         <div className="flex flex-wrap gap-4 mb-8">
-                            {["Innovation", "Excellence", "Integrity", "Collaboration"].map((value, index) => (
+                            {["Innovation", "Excellence", "Integrity", "Creativity"].map((value, index) => (
                                 <div
                                     key={index}
-                                    className="px-4 py-2 bg-blue-900/20 rounded-full text-white/80 text-sm border border-blue-900/50"
+                                    className="px-4 py-2 bg-blue-900/20 rounded-full text-white/80 text-sm border border-blue-900/50 
+                       hover:bg-blue-700 hover:text-white hover:scale-105 transition-all duration-300 cursor-pointer"
                                 >
                                     {value}
                                 </div>
                             ))}
                         </div>
-
-                        <motion.button
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                            className="px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg text-white font-medium flex items-center gap-2 group"
-                        >
-                            <span>Learn More About Our Values</span>
-                            <span className="transform group-hover:translate-x-1 transition-transform">→</span>
-                        </motion.button>
                     </div>
 
                     {/* Right column - Image and stats */}

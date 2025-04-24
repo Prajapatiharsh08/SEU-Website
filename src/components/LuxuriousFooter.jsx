@@ -249,7 +249,7 @@ export default function LuxuriousFooter() {
                                 { name: "Home", href: "/" },
                                 { name: "About", href: "/about" },
                                 { name: "Services", href: "/services" },
-                                { name: "Careers", href: "/careers" },
+                                // { name: "Careers", href: "/careers" },
                                 { name: "Contact", href: "/contact" },
                             ].map((link, index) => (
                                 <Link

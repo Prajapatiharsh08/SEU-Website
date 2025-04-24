@@ -405,14 +405,23 @@ export default function ServicesShowcase() {
                                                 <ChevronRight className="w-4 h-4" />
                                             </Link>
                                         </motion.div>
-                                        <motion.a
+                                        {/* <motion.a
                                             href="/contact"
                                             whileHover={{ scale: 1.05 }}
                                             whileTap={{ scale: 0.95 }}
                                             className="px-6 py-3 bg-transparent border border-white/20 hover:border-white/40 rounded-lg text-white font-medium flex items-center justify-center gap-2 transition-colors"
                                         >
                                             <span>Request Service</span>
-                                        </motion.a>
+                                        </motion.a> */}
+                                        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                                            <Link
+                                                to="/contact"
+                                                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                                                className="px-6 py-3 bg-transparent border border-white/20 hover:border-white/40 rounded-lg text-white font-medium flex items-center justify-center gap-2 transition-colors"
+                                            >
+                                                <span>Request Service</span>
+                                            </Link>
+                                        </motion.div>
                                     </div>
                                 </div>
                             </div>
