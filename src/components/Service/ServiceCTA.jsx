@@ -67,6 +67,7 @@ export default function ServiceDetailCTA() {
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                             className="px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-800 hover:from-blue-500 hover:to-blue-700 rounded-full text-white font-medium text-lg shadow-lg shadow-blue-900/30 flex items-center justify-center gap-2"
+                            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} // Scroll to top on click
                         >
                             <span>Get in Touch</span>
                             <ArrowRight className="w-5 h-5" />
@@ -76,6 +77,7 @@ export default function ServiceDetailCTA() {
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                             className="px-8 py-4 bg-transparent border-2 border-white/20 hover:border-white/40 rounded-full text-white font-medium text-lg flex items-center justify-center gap-2 transition-colors"
+                            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} // Scroll to top on click
                         >
                             <span>Explore All Services</span>
                         </motion.a>

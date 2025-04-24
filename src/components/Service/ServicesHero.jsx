@@ -116,6 +116,10 @@ export default function ServicesHero() {
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
                         <motion.a
                             href="#services"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                document.getElementById("services")?.scrollIntoView({ behavior: "smooth" });
+                            }}
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                             className="px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-800 hover:from-blue-500 hover:to-blue-700 rounded-full text-white font-medium text-lg shadow-lg shadow-blue-900/30 flex items-center justify-center gap-2 min-w-[200px]"
@@ -123,8 +127,16 @@ export default function ServicesHero() {
                             <span>Explore Services</span>
                             <span className="transform group-hover:translate-x-1 transition-transform">→</span>
                         </motion.a>
+
                         <motion.a
                             href="/contact"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                window.scrollTo({ top: 0, behavior: "smooth" });
+                                setTimeout(() => {
+                                    window.location.href = "/contact";
+                                }, 300); // Optional: Adjust timing if needed
+                            }}
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                             className="px-8 py-4 bg-transparent border-2 border-white/20 hover:border-white/40 rounded-full text-white font-medium text-lg flex items-center justify-center gap-2 min-w-[200px] transition-colors"

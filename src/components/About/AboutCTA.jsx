@@ -54,7 +54,7 @@ export default function AboutCTA() {
                         <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                             <Link
                                 to="/contact"
-                                onClick={() => window.scrollTo(0, 0)}
+                                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                                 className="px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full text-white font-medium text-lg flex items-center gap-2 group transition-all duration-300 hover:shadow-[0_0_30px_rgba(66,99,235,0.5)]"
                             >
                                 <span>Start a Project</span>
@@ -65,7 +65,7 @@ export default function AboutCTA() {
                         <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="mt-4">
                             <Link
                                 to="/services"
-                                onClick={() => window.scrollTo(0, 0)}
+                                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                                 className="px-8 py-4 bg-transparent border border-blue-600 hover:border-blue-500 rounded-full text-white font-medium text-lg transition-all duration-300 hover:bg-blue-900/20"
                             >
                                 Explore Our Services

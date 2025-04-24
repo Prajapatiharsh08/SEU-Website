@@ -94,7 +94,7 @@ export default function AboutHero() {
                 </motion.div>
 
                 <h1 className="hero-title text-5xl md:text-7xl lg:text-8xl text-blue-200 font-bold mb-8 bg-clip-text bg-gradient-to-r from-white via-blue-300 to-white">
-                <span>Crafting</span> <span>Digital</span> <span>Excellence</span>
+                    <span>Crafting</span> <span>Digital</span> <span>Excellence</span>
                 </h1>
 
                 <p className="hero-subtitle text-xl md:text-2xl text-white/70 max-w-3xl mx-auto mb-12 leading-relaxed">
@@ -110,12 +110,20 @@ export default function AboutHero() {
                 >
                     <a
                         href="#mission"
+                        onClick={(e) => {
+                            e.preventDefault();
+                            document.getElementById("mission")?.scrollIntoView({ behavior: "smooth" });
+                        }}
                         className="px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-800 hover:from-blue-500 hover:to-blue-700 rounded-full text-white font-medium text-lg transition-all duration-300 hover:shadow-[0_0_20px_rgba(66,99,235,0.5)]"
                     >
                         Our Mission
                     </a>
                     <a
                         href="#process"
+                        onClick={(e) => {
+                            e.preventDefault();
+                            document.getElementById("process")?.scrollIntoView({ behavior: "smooth" });
+                        }}
                         className="px-8 py-4 bg-transparent border border-blue-600 hover:border-blue-500 rounded-full text-white font-medium text-lg transition-all duration-300 hover:bg-blue-900/20"
                     >
                         How We Work

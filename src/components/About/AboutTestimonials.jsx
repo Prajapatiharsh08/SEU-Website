@@ -22,7 +22,7 @@ export default function AboutTestimonials() {
             quote:
                 "Working with SEU was a game-changer for our brand. They understood our vision perfectly and delivered a digital experience that exceeded our expectations in every way.",
             author: "Robert Chen",
-            position: "Marketing Director, Innovate Solutions",
+            position: "Marketing Director",
             image: "/Images/testimonial2.jpg",
             company: "Innovate Solutions",
         },
@@ -30,7 +30,7 @@ export default function AboutTestimonials() {
             quote:
                 "The team at SEU doesn't just create websites; they craft digital experiences that truly connect with users. Their strategic approach and technical expertise are unmatched in the industry.",
             author: "Kunal Sharma",
-            position: "Product Manager, Global Reach",
+            position: "Product Manager",
             image:
                 "/Images/testimonial3.jpg",
             company: "Global Reach",

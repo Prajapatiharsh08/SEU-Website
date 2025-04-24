@@ -39,7 +39,7 @@ const testimonials = [
     {
         id: 3,
         name: "Kunal Sharma",
-        position: "VP of Operations",
+        position: "Product Manager",
         company: "Enterprise Systems",
         image: testimonial3,
         quote:
@@ -172,7 +172,7 @@ export default function ServiceTestimonials() {
                                         <div>
                                             <h4 className="text-xl font-bold text-white">{testimonials[currentIndex].name}</h4>
                                             <p className="text-white/70">
-                                                {testimonials[currentIndex].position}, {testimonials[currentIndex].company}
+                                                {testimonials[currentIndex].position}
                                             </p>
                                         </div>
                                         <div className="mt-4 md:mt-0">

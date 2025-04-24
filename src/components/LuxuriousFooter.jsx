@@ -155,9 +155,15 @@ export default function LuxuriousFooter() {
                             className="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors group"
                             onMouseEnter={() => setActiveLink("about")}
                             onMouseLeave={() => setActiveLink(null)}
+                            onClick={() => {
+                                window.scrollTo({ top: 0, behavior: 'smooth' });
+                            }}
                         >
                             <span>Learn more about us</span>
-                            <motion.span animate={activeLink === "about" ? { x: 5 } : { x: 0 }} transition={{ duration: 0.2 }}>
+                            <motion.span
+                                animate={activeLink === "about" ? { x: 5 } : { x: 0 }}
+                                transition={{ duration: 0.2 }}
+                            >
                                 <ArrowUpRight className="ml-1 h-4 w-4" />
                             </motion.span>
                         </Link>
@@ -189,7 +195,9 @@ export default function LuxuriousFooter() {
                                         className="text-blue-200/70 hover:text-white flex items-center group transition-colors"
                                         onMouseEnter={() => setActiveLink(`service-${index}`)}
                                         onMouseLeave={() => setActiveLink(null)}
-                                        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}  // Scroll to top on click
+                                        onClick={() => {
+                                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                                        }}
                                     >
                                         <ChevronRight className="mr-2 h-4 w-4 text-blue-500" />
                                         <span>{service.name}</span>
@@ -206,13 +214,20 @@ export default function LuxuriousFooter() {
                         </ul>
 
                         <Link
-                            href="/services"
+                            to="/services"
                             className="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors mt-4 group"
+                            onClick={() => {
+                                setActiveLink("all-services");
+                                window.scrollTo({ top: 0, behavior: 'smooth' });
+                            }}
                             onMouseEnter={() => setActiveLink("all-services")}
                             onMouseLeave={() => setActiveLink(null)}
                         >
                             <span>View all services</span>
-                            <motion.span animate={activeLink === "all-services" ? { x: 5 } : { x: 0 }} transition={{ duration: 0.2 }}>
+                            <motion.span
+                                animate={activeLink === "all-services" ? { x: 5 } : { x: 0 }}
+                                transition={{ duration: 0.2 }}
+                            >
                                 <ArrowUpRight className="ml-1 h-4 w-4" />
                             </motion.span>
                         </Link>
@@ -294,60 +309,7 @@ export default function LuxuriousFooter() {
                             </li>
                         </ul>
 
-                        {/* Newsletter */}
-                        <div className="bg-gradient-to-br from-blue-900/40 to-purple-900/40 rounded-lg p-4 border border-blue-800/50">
-                            <h4 className="text-white font-medium mb-2">Subscribe to our newsletter</h4>
-                            <form onSubmit={handleSubmit} className="flex">
-                                <input
-                                    type="email"
-                                    value={email}
-                                    onChange={(e) => setEmail(e.target.value)}
-                                    placeholder="Your email"
-                                    className="flex-1 bg-blue-950/50 border border-blue-800/30 rounded-l-md px-3 py-2 text-sm text-white placeholder:text-blue-400/50 focus:outline-none focus:border-blue-500 transition-colors"
-                                    required
-                                />
-                                <button
-                                    type="submit"
-                                    disabled={isSubmitting || isSubmitted}
-                                    className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white px-3 py-2 rounded-r-md transition-colors text-sm flex items-center"
-                                >
-                                    {isSubmitting ? (
-                                        <svg
-                                            className="animate-spin h-4 w-4 text-white"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            fill="none"
-                                            viewBox="0 0 24 24"
-                                        >
-                                            <circle
-                                                className="opacity-25"
-                                                cx="12"
-                                                cy="12"
-                                                r="10"
-                                                stroke="currentColor"
-                                                strokeWidth="4"
-                                            ></circle>
-                                            <path
-                                                className="opacity-75"
-                                                fill="currentColor"
-                                                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                                            ></path>
-                                        </svg>
-                                    ) : isSubmitted ? (
-                                        <svg
-                                            className="w-4 h-4"
-                                            fill="none"
-                                            stroke="currentColor"
-                                            viewBox="0 0 24 24"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                                        </svg>
-                                    ) : (
-                                        <Send className="h-4 w-4" />
-                                    )}
-                                </button>
-                            </form>
-                        </div>
+
                     </motion.div>
                 </div>
 
@@ -362,12 +324,13 @@ export default function LuxuriousFooter() {
                     <div className="flex space-x-4">
                         {[
                             { icon: <Twitter className="h-5 w-5" />, color: "from-blue-500 to-blue-600", url: "https://x.com/SEUnits_Pvt_LTD" },
-                            { icon: <Instagram className="h-5 w-5" />, color: "from-pink-500 to-purple-600", url: "https://www.instagram.com/seu_pvt_ltd?igsh=ejZvdThzc3Mzcnpr" },
+                            { icon: <Instagram className="h-5 w-5" />, color: "from-pink-500 to-purple-600", url: "https://www.instagram.com/seunits.official?igsh=ejZvdThzc3Mzcnpr" },
                             { icon: <Linkedin className="h-5 w-5" />, color: "from-blue-600 to-blue-800", url: "https://www.linkedin.com/company/sudarsana-entrepreneurs-units-pvt-ltd/?viewAsMember=true" },
                         ].map((social, index) => (
                             <motion.a
                                 key={index}
                                 href={social.url}
+                                target="_blank"
                                 className={`flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-br ${social.color} text-white shadow-lg shadow-blue-900/20 hover:shadow-blue-600/30 transition-all duration-300`}
                                 whileHover={{ y: -5, scale: 1.1 }}
                                 whileTap={{ scale: 0.9 }}

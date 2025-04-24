@@ -80,34 +80,36 @@ const serviceCaseStudies = {
     ],
     "software-solutions": [
         {
-            title: "Business Analytics Dashboard",
-            client: "Internal Showcase Project",
-            description: "Developed a prototype business analytics dashboard for data visualization and reporting.",
-            challenge: "Create an intuitive dashboard that makes complex business data accessible and actionable.",
+            title: "E-commerce Platform for Egglife Foods",
+            client: "Egglife Foods",
+            description: "Developed a feature-rich e-commerce website for Egglife Foods to improve online sales and customer engagement.",
+            challenge:
+                "Create a seamless, responsive online shopping experience for a growing food brand while supporting product customization and direct-to-consumer sales.",
             solution:
-                "Designed a modular dashboard with customizable widgets, automated reporting, and data integration capabilities.",
+                "Built a robust e-commerce platform with an intuitive user interface, secure payment processing, and integration with the company’s inventory and order management systems.",
             results: [
-                "Functional prototype completed with sample data integration",
-                "Successfully demonstrated at technology showcase event",
-                "Currently enhancing features based on feedback",
-                "Preparing for beta testing with select business partners",
+                "Launched a fully functional, mobile-responsive e-commerce site",
+                "Successfully integrated third-party shipping and payment gateways",
+                "Enhanced customer experience with personalized product recommendations",
+                "Achieved a 40% increase in online sales within the first 6 months",
             ],
-            image: "/placeholder.svg?height=600&width=800",
+            image: "/images/projects/egglife-foods.png",
         },
         {
-            title: "Project Management Tool Concept",
-            client: "SEU Software Lab",
-            description: "Designed a specialized project management tool concept for creative agencies.",
-            challenge: "Develop a project management solution tailored to the unique workflows of creative teams.",
+            title: "Tech-Driven Learning Platform for Ready for Udaan",
+            client: "Ready for Udaan",
+            description: "Developed an interactive learning platform designed to offer personalized learning paths for career development and upskilling.",
+            challenge:
+                "Design an engaging and user-friendly platform that could handle personalized content delivery while being scalable for a growing user base.",
             solution:
-                "Created a concept featuring visual task management, resource allocation, and client collaboration tools.",
+                "Built a modular learning management system (LMS) that offers personalized courses, progress tracking, and interactive assessments for career development.",
             results: [
-                "Completed detailed wireframes and interactive prototype",
-                "Positive feedback from initial stakeholder presentations",
-                "Currently developing core functionality for MVP",
-                "Planning beta release for Q4 2024",
+                "Successfully deployed platform with real-time analytics for learners",
+                "Achieved strong user engagement with an interactive UI and rich media content",
+                "Facilitated a 50% increase in student course completion rates",
+                "Preparing for a major platform update to integrate AI-powered learning paths",
             ],
-            image: "/placeholder.svg?height=600&width=800",
+            image: "/images/projects/ready-for-udaan.png",
         },
     ],
     "ar-solutions": [
@@ -270,35 +272,36 @@ const serviceCaseStudies = {
     ],
     marketing: [
         {
-            title: "Digital Marketing Framework",
-            client: "Internal Methodology Project",
-            description: "Developed a comprehensive framework for digital marketing campaigns across multiple channels.",
+            title: "Real Estate Digital Presence Enhancement",
+            client: "Shivalik Group",
+            description: "Executed a comprehensive digital marketing initiative to elevate Shivalik Group’s online presence and brand perception.",
             challenge:
-                "Create a structured approach to digital marketing that ensures consistent messaging and measurable results.",
+                "Position a reputed real estate brand prominently in a saturated digital landscape while preserving its legacy-driven image.",
             solution:
-                "Designed a methodology covering strategy development, content creation, channel selection, and performance measurement.",
+                "Devised and implemented an integrated campaign strategy combining SEO, performance marketing, content design, and lead generation.",
             results: [
-                "Completed framework documentation and implementation guides",
-                "Successfully applied to SEU's own marketing initiatives",
-                "Currently developing additional channel-specific playbooks",
-                "Preparing for first client marketing projects",
+                "Increased qualified web traffic by 60% within three months",
+                "Achieved a 35% improvement in social media engagement rates",
+                "Strengthened brand consistency across all digital platforms",
+                "Generated substantial inbound inquiries through paid and organic channels",
             ],
-            image: "/placeholder.svg?height=600&width=800",
+            image: "/images/projects/shivalik.png",
         },
         {
-            title: "Content Marketing Strategy",
-            client: "SEU Marketing Team",
-            description: "Developed a content marketing strategy for technology service providers.",
+            title: "Product-Focused Lead Generation Campaign",
+            client: "Royale Touche Plywood",
+            description: "Designed and launched a high-impact landing page and lead generation campaign for Royale Touche’s plywood division.",
             challenge:
-                "Create an effective approach to content marketing that establishes thought leadership and generates leads.",
-            solution: "Designed a strategy featuring educational content, thought leadership, and targeted lead magnets.",
+                "Attract niche B2B buyers and distributors through a targeted digital funnel focused on product features and premium appeal.",
+            solution:
+                "Developed a performance-driven microsite paired with a paid ad campaign optimized for conversions and market education.",
             results: [
-                "Completed strategy documentation and content calendar",
-                "Successfully implemented initial content pieces",
-                "Currently developing expanded content library",
-                "Planning comprehensive implementation for Q3 2024",
+                "Built a responsive, SEO-optimized microsite in under 3 weeks",
+                "Achieved 5x ROI through Meta and Google Ads in the first campaign cycle",
+                "Generated over 1,200 qualified leads within the initial launch phase",
+                "Enhanced the digital footprint of a legacy offline brand",
             ],
-            image: "/placeholder.svg?height=600&width=800",
+            image: "/images/projects/royale-touche.png",
         },
     ],
     default: [

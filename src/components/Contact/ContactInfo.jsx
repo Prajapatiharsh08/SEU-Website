@@ -34,7 +34,7 @@ export default function ContactInfo() {
         { icon: <Twitter className="w-5 h-5" />, url: "https://x.com/SEUnits_Pvt_LTD", color: "bg-[#1DA1F2]" },
         {
             icon: <Instagram className="w-5 h-5" />,
-            url: "https://www.instagram.com/seu_pvt_ltd?igsh=ejZvdThzc3Mzcnpr",
+            url: "https://www.instagram.com/seunits.official?igsh=ejZvdThzc3Mzcnpr",
             color: "bg-gradient-to-br from-[#833AB4] via-[#FD1D1D] to-[#FCAF45]",
         },
     ]

@@ -1,9 +1,13 @@
-import React from "react"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
-import { Send, CheckCircle } from "lucide-react"
+import { Send, CheckCircle } from 'lucide-react'
+import { useDispatch, useSelector } from "react-redux"
+import { submitContactFormRequest, resetContactForm } from "../../store/action/contactActions"
 
 export default function ContactForm() {
+    const dispatch = useDispatch()
+    const { loading, success, error } = useSelector((state) => state.contact)
+
     const [formState, setFormState] = useState({
         name: "",
         email: "",
@@ -12,8 +16,29 @@ export default function ContactForm() {
         message: "",
     })
     const [errors, setErrors] = useState({})
-    const [isSubmitting, setIsSubmitting] = useState(false)
     const [isSubmitted, setIsSubmitted] = useState(false)
+
+    // Handle Redux state changes
+    useEffect(() => {
+        if (success) {
+            setIsSubmitted(true)
+
+            // Reset form after submission
+            setFormState({
+                name: "",
+                email: "",
+                phone: "",
+                subject: "",
+                message: "",
+            })
+
+            // Reset submission status after 5 seconds
+            setTimeout(() => {
+                setIsSubmitted(false)
+                dispatch(resetContactForm())
+            }, 5000)
+        }
+    }, [success, dispatch])
 
     const handleChange = (e) => {
         const { name, value } = e.target
@@ -30,28 +55,28 @@ export default function ContactForm() {
     }
 
     const validateForm = () => {
-        const newErrors = {};
+        const newErrors = {}
 
         if (!formState.name.trim()) {
-            newErrors.name = "Name is required";
+            newErrors.name = "Name is required"
         }
 
         if (!formState.email.trim()) {
-            newErrors.email = "Email is required";
+            newErrors.email = "Email is required"
         } else if (!/\S+@\S+\.\S+/.test(formState.email)) {
-            newErrors.email = "Email is invalid";
+            newErrors.email = "Email is invalid"
         }
 
         if (!formState.subject.trim()) {
-            newErrors.subject = "Subject is required";
+            newErrors.subject = "Subject is required"
         }
 
         if (!formState.message.trim()) {
-            newErrors.message = "Message is required";
+            newErrors.message = "Message is required"
         }
 
-        setErrors(newErrors);
-        return Object.keys(newErrors).length === 0;
+        setErrors(newErrors)
+        return Object.keys(newErrors).length === 0
     }
 
     const handleSubmit = (e) => {
@@ -59,27 +84,8 @@ export default function ContactForm() {
 
         if (!validateForm()) return
 
-        setIsSubmitting(true)
-
-        // Simulate API call
-        setTimeout(() => {
-            setIsSubmitting(false)
-            setIsSubmitted(true)
-
-            // Reset form after submission
-            setFormState({
-                name: "",
-                email: "",
-                phone: "",
-                subject: "",
-                message: "",
-            })
-
-            // Reset submission status after 5 seconds
-            setTimeout(() => {
-                setIsSubmitted(false)
-            }, 5000)
-        }, 1500)
+        // Dispatch action to Redux Saga
+        dispatch(submitContactFormRequest(formState))
     }
 
     return (
@@ -109,6 +115,10 @@ export default function ContactForm() {
                 </motion.div>
             ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
+                    {error && (
+                        <div className="bg-red-500/20 border border-red-500 text-red-100 px-4 py-3 rounded-lg">{error}</div>
+                    )}
+
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
                             <label htmlFor="name" className="block text-white/80 mb-2">
@@ -148,7 +158,7 @@ export default function ContactForm() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
                             <label htmlFor="phone" className="block text-white/80 mb-2">
-                                Phone Number 
+                                Phone Number <span className="text-white/50">(Optional)</span>
                             </label>
                             <input
                                 type="tel"
@@ -231,12 +241,12 @@ export default function ContactForm() {
 
                     <motion.button
                         type="submit"
-                        disabled={isSubmitting}
+                        disabled={loading}
                         className="w-full bg-gradient-to-r from-blue-600 to-indigo-800 hover:from-blue-500 hover:to-indigo-700 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 flex items-center justify-center"
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
                     >
-                        {isSubmitting ? (
+                        {loading ? (
                             <>
                                 <svg
                                     className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"

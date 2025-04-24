@@ -148,7 +148,15 @@ export default function Hero() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, delay: 2.7 }}
             >
-                <Link to="/services" className="relative z-10 cursor-pointer">Explore Our Work</Link>
+                <Link
+                    to="/services"
+                    className="relative z-10 cursor-pointer"
+                    onClick={() => {
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }}
+                >
+                    Explore Our Work
+                </Link>
                 <motion.div
                     className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600"
                     initial={{ x: "-100%" }}
