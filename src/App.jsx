@@ -11,10 +11,9 @@ import VideoShowcase from './components/VideoShowcase'
 import WhyChooseUs from './components/WhyChooseUs'
 import AboutPage from './components/About/AboutPage'
 import ContactPage from './components/Contact/ContactPage'
-import CareersPage from './components/Career/CareerPage'
-import ApplicationForm from './components/Career/ApplicationForm'
 import ServicesPage from './components/Service/ServicesPage'
 import ServiceDetailPage from './components/Service/ServiceDetailPage'
+import CareerPage from './components/Career/CareerPage'
 
 function App() {
   return (
@@ -42,9 +41,8 @@ function App() {
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/services/:service" element={<ServiceDetailPage />} />
           <Route path="/projects" element={<VideoShowcase />} />
-          {/* <Route path="/careers" element={<CareersPage />} /> */}
+          <Route path="/careers" element={<CareerPage />} />
           <Route path="/contact" element={<ContactPage />} />
-          <Route path="/careers/apply" element={<ApplicationForm />} />
         </Routes>
         <LuxuriousFooter />
       </div>

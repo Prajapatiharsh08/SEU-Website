@@ -46,15 +46,15 @@ export default function ServicesHero() {
             })
 
             // Parallax effect on scroll
-            gsap.to(headingRef.current, {
-                y: -50,
-                scrollTrigger: {
-                    trigger: sectionRef.current,
-                    start: "top top",
-                    end: "bottom top",
-                    scrub: true,
-                },
-            })
+            // gsap.to(headingRef.current, {
+            //     y: -50,
+            //     scrollTrigger: {
+            //         trigger: sectionRef.current,
+            //         start: "top top",
+            //         end: "bottom top",
+            //         scrub: true,
+            //     },
+            // })
 
             gsap.to(glowRef.current, {
                 y: -100,

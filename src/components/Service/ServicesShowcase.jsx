@@ -23,6 +23,7 @@ import sap from '../../../public/Images/Services/sap.png'
 import hardwaredesign from '../../../public/Images/Services/hardwaredesign.png'
 import technology from '../../../public/Images/Services/technology.png'
 import marketing from '../../../public/Images/Services/marketing.png'
+import { Link } from "react-router-dom"
 
 // Register GSAP plugins
 if (typeof window !== "undefined") {
@@ -392,15 +393,18 @@ export default function ServicesShowcase() {
                                     </div>
 
                                     <div className="flex flex-col sm:flex-row gap-4">
-                                        <motion.a
-                                            href={`/services/${activeService.id}`}
-                                            whileHover={{ scale: 1.05 }}
-                                            whileTap={{ scale: 0.95 }}
+                                        <motion.div
                                             className="px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-800 hover:from-blue-500 hover:to-blue-700 rounded-lg text-white font-medium flex items-center justify-center gap-2"
                                         >
-                                            <span>View Details</span>
-                                            <ChevronRight className="w-4 h-4" />
-                                        </motion.a>
+                                            <Link
+                                                to={`/services/${activeService.id}`}
+                                                className="flex items-center gap-2"
+                                                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}  // Scroll to top smoothly
+                                            >
+                                                <span>View Details</span>
+                                                <ChevronRight className="w-4 h-4" />
+                                            </Link>
+                                        </motion.div>
                                         <motion.a
                                             href="/contact"
                                             whileHover={{ scale: 1.05 }}

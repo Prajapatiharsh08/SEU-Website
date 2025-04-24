@@ -189,6 +189,7 @@ export default function LuxuriousFooter() {
                                         className="text-blue-200/70 hover:text-white flex items-center group transition-colors"
                                         onMouseEnter={() => setActiveLink(`service-${index}`)}
                                         onMouseLeave={() => setActiveLink(null)}
+                                        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}  // Scroll to top on click
                                     >
                                         <ChevronRight className="mr-2 h-4 w-4 text-blue-500" />
                                         <span>{service.name}</span>
@@ -233,15 +234,16 @@ export default function LuxuriousFooter() {
                                 { name: "Home", href: "/" },
                                 { name: "About", href: "/about" },
                                 { name: "Services", href: "/services" },
-                                // { name: "Careers", href: "/careers" },
+                                { name: "Careers", href: "/careers" },
                                 { name: "Contact", href: "/contact" },
                             ].map((link, index) => (
                                 <Link
                                     key={index}
-                                    href={link.href}
+                                    to={link.href}  // Use 'to' instead of 'href' for react-router-dom links
                                     className="text-blue-200/70 hover:text-white transition-colors flex items-center group"
                                     onMouseEnter={() => setActiveLink(`link-${index}`)}
                                     onMouseLeave={() => setActiveLink(null)}
+                                    onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}  // Scroll to top on click
                                 >
                                     <ChevronRight className="mr-2 h-4 w-4 text-blue-500" />
                                     <span>{link.name}</span>
@@ -359,9 +361,9 @@ export default function LuxuriousFooter() {
                     <h4 className="text-blue-400 text-sm font-medium mb-4 tracking-wider">CONNECT WITH US</h4>
                     <div className="flex space-x-4">
                         {[
-                            { icon: <Twitter className="h-5 w-5" />, color: "from-blue-500 to-blue-600", url:"https://x.com/SEUnits_Pvt_LTD" },
-                            { icon: <Instagram className="h-5 w-5" />, color: "from-pink-500 to-purple-600", url:"https://www.instagram.com/seu_pvt_ltd?igsh=ejZvdThzc3Mzcnpr" },
-                            { icon: <Linkedin className="h-5 w-5" />, color: "from-blue-600 to-blue-800", url:"https://www.linkedin.com/company/sudarsana-entrepreneurs-units-pvt-ltd/?viewAsMember=true" },
+                            { icon: <Twitter className="h-5 w-5" />, color: "from-blue-500 to-blue-600", url: "https://x.com/SEUnits_Pvt_LTD" },
+                            { icon: <Instagram className="h-5 w-5" />, color: "from-pink-500 to-purple-600", url: "https://www.instagram.com/seu_pvt_ltd?igsh=ejZvdThzc3Mzcnpr" },
+                            { icon: <Linkedin className="h-5 w-5" />, color: "from-blue-600 to-blue-800", url: "https://www.linkedin.com/company/sudarsana-entrepreneurs-units-pvt-ltd/?viewAsMember=true" },
                         ].map((social, index) => (
                             <motion.a
                                 key={index}
