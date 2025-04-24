@@ -82,7 +82,7 @@ export default function ServiceDetailCTA() {
                                 <span>Get in Touch</span>
                             </Link>
                         </motion.div>
-                        <motion.a
+                        {/* <motion.a
                             href="/services"
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
@@ -90,7 +90,16 @@ export default function ServiceDetailCTA() {
                             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} // Scroll to top on click
                         >
                             <span>Explore All Services</span>
-                        </motion.a>
+                        </motion.a> */}
+                        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                            <Link
+                                to="/services"
+                                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                                className="px-8 py-4 bg-transparent border-2 border-white/20 hover:border-white/40 rounded-full text-white font-medium text-lg flex items-center justify-center gap-2 transition-colors"
+                            >
+                                <span>Explore All Services</span>
+                            </Link>
+                        </motion.div>
                     </div>
                 </div>
             </div>

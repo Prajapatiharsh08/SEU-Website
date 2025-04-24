@@ -124,15 +124,11 @@ export default function ServiceDetailFAQ({ serviceId }) {
 
     const sectionRef = useRef(null)
     const headingRef = useRef(null)
-    const faqRef = useRef(null)
 
-    // GSAP animations
     useEffect(() => {
-        if (typeof window === "undefined") return
-        if (!sectionRef.current || !headingRef.current || !faqRef.current) return
+        if (!sectionRef.current || !headingRef.current) return
 
         const ctx = gsap.context(() => {
-            // Animate section heading
             gsap.from(headingRef.current, {
                 y: 50,
                 opacity: 0,
@@ -143,40 +139,26 @@ export default function ServiceDetailFAQ({ serviceId }) {
                     toggleActions: "play none none none",
                 },
             })
-
-            // Animate FAQs
-            const faqItems = faqRef.current.querySelectorAll(".faq-item")
-            gsap.from(faqItems, {
-                y: 30,
-                opacity: 0,
-                duration: 0.8,
-                stagger: 0.15,
-                scrollTrigger: {
-                    trigger: faqRef.current,
-                    start: "top 75%",
-                    toggleActions: "play none none none",
-                },
-            })
         })
 
         return () => ctx.revert()
     }, [])
 
     return (
-        <section ref={sectionRef} className="py-24 md:py-32 relative overflow-hidden">
-            {/* Background elements */}
+        <section ref={sectionRef} className="py-12 md:py-20 relative overflow-hidden">
+            {/* Background Blobs */}
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-                <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-blue-500/10 rounded-full filter blur-3xl"></div>
-                <div className="absolute bottom-1/3 left-1/4 w-96 h-96 bg-purple-500/10 rounded-full filter blur-3xl"></div>
+                <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl"></div>
+                <div className="absolute bottom-1/3 left-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
             </div>
 
             <div className="container mx-auto px-4 relative z-10">
-                {/* Section header */}
-                <div ref={headingRef} className="text-center mb-16">
+                {/* Heading */}
+                <div ref={headingRef} className="text-center mb-12">
                     <div className="inline-block px-4 py-1 rounded-full bg-blue-900/30 text-blue-400 text-sm font-medium mb-4">
                         Frequently Asked Questions
                     </div>
-                    <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-300 to-white">
+                    <h2 className="text-3xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-300 to-white">
                         FAQ
                     </h2>
                     <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full"></div>
@@ -185,36 +167,46 @@ export default function ServiceDetailFAQ({ serviceId }) {
                     </p>
                 </div>
 
-                {/* FAQ items */}
-                <div ref={faqRef} className="max-w-4xl mx-auto">
+                {/* FAQ List */}
+                <div className="max-w-4xl mx-auto">
                     {faqs.map((faq, index) => (
-                        <motion.div
+                        <div
                             key={index}
-                            className="faq-item bg-gradient-to-br from-blue-900/20 to-blue-900/5 backdrop-blur-sm border border-blue-900/30 rounded-xl mb-4"
+                            className="faq-item bg-gradient-to-br from-blue-900/20 to-blue-900/5 backdrop-blur-sm border border-blue-900/30 rounded-xl mb-4 overflow-hidden"
                         >
-                            <div className="flex items-center justify-between p-6">
-                                <h4 className="text-xl font-bold text-white">{faq.question}</h4>
-                                <button
-                                    onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                                    className="text-blue-400 hover:text-blue-300 transition-colors cursor-pointer"
-                                >
-                                    <ChevronDown className="w-6 h-6" />
-                                </button>
-                            </div>
-                            <AnimatePresence>
+                            <button
+                                onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                                className="flex items-center justify-between w-full p-6 text-left"
+                            >
+                                <h4 className="text-lg md:text-xl font-semibold text-white">{faq.question}</h4>
+                                <ChevronDown
+                                    className={`w-5 h-5 md:w-6 md:h-6 text-blue-400 transition-transform duration-300 ${openIndex === index ? "rotate-180" : ""
+                                        }`}
+                                />
+                            </button>
+
+                            <AnimatePresence initial={false}>
                                 {openIndex === index && (
                                     <motion.div
+                                        key="content"
                                         initial={{ height: 0, opacity: 0 }}
-                                        animate={{ height: "auto", opacity: 1 }}
-                                        exit={{ height: 0, opacity: 0 }}
-                                        transition={{ duration: 0.3 }}
-                                        className="p-6 border-t border-blue-900/30"
+                                        animate={{
+                                            height: "auto",
+                                            opacity: 1,
+                                            transition: { ease: "easeOut", duration: 0.4 },
+                                        }}
+                                        exit={{
+                                            height: 0,
+                                            opacity: 0,
+                                            transition: { ease: "easeIn", duration: 0.3 },
+                                        }}
+                                        className="px-6 pb-6"
                                     >
-                                        <p className="text-white/70">{faq.answer}</p>
+                                        <p className="text-white/70 text-sm md:text-base">{faq.answer}</p>
                                     </motion.div>
                                 )}
                             </AnimatePresence>
-                        </motion.div>
+                        </div>
                     ))}
                 </div>
             </div>

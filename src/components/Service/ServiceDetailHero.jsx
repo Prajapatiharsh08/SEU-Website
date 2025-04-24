@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react"
 import { motion } from "framer-motion"
 import { gsap } from "gsap"
+import { Link } from "react-router-dom"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import {
     Gamepad2,
@@ -220,7 +221,7 @@ export default function ServiceDetailHero({ serviceId }) {
                                 <span className="transform group-hover:translate-x-1 transition-transform">→</span>
                             </motion.a>
 
-                            <motion.a
+                            {/* <motion.a
                                 href="/contact"
                                 onClick={(e) => {
                                     e.preventDefault();
@@ -234,7 +235,16 @@ export default function ServiceDetailHero({ serviceId }) {
                                 className="px-8 py-4 bg-transparent border-2 border-white/20 hover:border-white/40 rounded-full text-white font-medium text-lg flex items-center justify-center gap-2 transition-colors"
                             >
                                 <span>Request Quote</span>
-                            </motion.a>
+                            </motion.a> */}
+                            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                                <Link
+                                    to="/contact"
+                                    onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                                    className="px-8 py-4 bg-transparent border-2 border-white/20 hover:border-white/40 rounded-full text-white font-medium text-lg flex items-center justify-center gap-2 transition-colors"
+                                >
+                                    <span>Request Quote</span>
+                                </Link>
+                            </motion.div>
                         </div>
                     </div>
 
