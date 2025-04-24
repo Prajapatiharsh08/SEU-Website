@@ -41,7 +41,7 @@ function App() {
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/services/:service" element={<ServiceDetailPage />} />
           <Route path="/projects" element={<VideoShowcase />} />
-          <Route path="/careers" element={<CareerPage />} />
+          {/* <Route path="/careers" element={<CareerPage />} /> */}
           <Route path="/contact" element={<ContactPage />} />
         </Routes>
         <LuxuriousFooter />
