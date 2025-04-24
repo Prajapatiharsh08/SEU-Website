@@ -148,7 +148,7 @@ export default function ContactForm() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
                             <label htmlFor="phone" className="block text-white/80 mb-2">
-                                Phone Number <span className="text-white/50">(Optional)</span>
+                                Phone Number 
                             </label>
                             <input
                                 type="tel"
