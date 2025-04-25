@@ -8,7 +8,7 @@ import {
 
 // API call function
 const submitContactFormAPI = (formData) => {
-    return axios.post('http://localhost:9999/api/contact', formData, {
+    return axios.post('https://seu-backend.onrender.com/api/contact', formData, {
         headers: {
             'Content-Type': 'application/json',
         },

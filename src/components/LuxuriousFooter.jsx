@@ -323,9 +323,25 @@ export default function LuxuriousFooter() {
                     <h4 className="text-blue-400 text-sm font-medium mb-4 tracking-wider">CONNECT WITH US</h4>
                     <div className="flex space-x-4">
                         {[
-                            { icon: <Twitter className="h-5 w-5" />, color: "from-blue-500 to-blue-600", url: "https://x.com/SEUnits_Pvt_LTD" },
-                            { icon: <Instagram className="h-5 w-5" />, color: "from-pink-500 to-purple-600", url: "https://www.instagram.com/seunits.official?igsh=ejZvdThzc3Mzcnpr" },
-                            { icon: <Linkedin className="h-5 w-5" />, color: "from-blue-600 to-blue-800", url: "https://www.linkedin.com/company/sudarsana-entrepreneurs-units-pvt-ltd/?viewAsMember=true" },
+                            {
+                                icon: (
+                                    <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                                    </svg>
+                                ),
+                                color: "bg-black",
+                                url: "https://x.com/SEUnits_Pvt_LTD",
+                            },
+                            {
+                                icon: <Instagram className="h-5 w-5" />,
+                                color: "bg-gradient-to-br from-[#FF4081] via-[#F50057] to-[#D500F9]",
+                                url: "https://www.instagram.com/seunits.official?igsh=ejZvdThzc3Mzcnpr",
+                            },
+                            {
+                                icon: <Linkedin className="h-5 w-5" />,
+                                color: "from-blue-600 to-blue-800",
+                                url: "https://www.linkedin.com/company/sudarsana-entrepreneurs-units-pvt-ltd/?viewAsMember=true",
+                            },
                         ].map((social, index) => (
                             <motion.a
                                 key={index}

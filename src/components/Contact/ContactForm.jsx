@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
-import { Send, CheckCircle } from 'lucide-react'
 import { useDispatch, useSelector } from "react-redux"
 import { submitContactFormRequest, resetContactForm } from "../../store/action/contactActions"
+import { Send, CheckCircle, MessageSquare, Users, Zap, Globe, Code, Sparkles } from "lucide-react"
 
 export default function ContactForm() {
     const dispatch = useDispatch()
@@ -95,6 +95,8 @@ export default function ContactForm() {
             transition={{ duration: 0.8 }}
             className="bg-blue-900/20 backdrop-blur-sm rounded-2xl border border-blue-900/30 p-8"
         >
+
+
             <h2 className="text-3xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-white/70">
                 Send Us a Message
             </h2>
@@ -272,6 +274,89 @@ export default function ContactForm() {
                     </motion.button>
                 </form>
             )}
+
+
+            <div className="mt-12 pt-8 border-t border-blue-900/30">
+                <h3 className="text-xl font-semibold text-white mb-6 text-center">Why Choose SEU?</h3>
+
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    {[
+                        { icon: <Globe className="h-6 w-6" />, text: "Global Reach" },
+                        { icon: <Zap className="h-6 w-6" />, text: "Fast Delivery" },
+                        { icon: <Code className="h-6 w-6" />, text: "Expert Developers" },
+                        { icon: <Users className="h-6 w-6" />, text: "Client Focused" },
+                    ].map((item, index) => (
+                        <motion.div
+                            key={index}
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, delay: 0.1 * index }}
+                            className="bg-blue-900/30 backdrop-blur-sm rounded-lg p-4 flex flex-col items-center text-center"
+                        >
+                            <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-indigo-700 flex items-center justify-center mb-3">
+                                {item.icon}
+                            </div>
+                            <p className="text-white font-medium">{item.text}</p>
+                        </motion.div>
+                    ))}
+                </div>
+
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 1, delay: 0.5 }}
+                    className="mt-8 relative"
+                >
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-indigo-600/20 rounded-xl" />
+
+                    <div className="relative p-6 rounded-xl border border-blue-500/30 bg-blue-900/10 backdrop-blur-sm">
+                        <div className="flex items-center mb-4">
+                            <Sparkles className="w-5 h-5 text-blue-400 mr-2" />
+                            <h4 className="text-lg font-semibold text-white">Ready to transform your digital presence?</h4>
+                        </div>
+
+                        <p className="text-white/70 mb-2">
+                            Our team of experts is ready to help you build innovative solutions that drive your business forward.
+                        </p>
+
+                        <div className="flex flex-wrap gap-2 mt-4">
+                            {[
+                                "Game Development",
+                                "SAP Solutions",
+                                "Mobile App Development",
+                                "Augmented Reality",
+                                "Virtual Reality",
+                                "Custom Software",
+                                "Digital Product Strategy"
+                            ].map((service, i) => (
+                                <span
+                                    key={i}
+                                    className="px-3 py-1 bg-blue-800/30 rounded-full text-blue-300 text-xs font-medium"
+                                >
+                                    {service}
+                                </span>
+                            ))}
+                        </div>
+
+                        {/* <div className="absolute -bottom-3 -right-3">
+                            <motion.div
+                                animate={{
+                                    scale: [1, 1.1, 1],
+                                    rotate: [0, 5, 0, -5, 0],
+                                }}
+                                transition={{
+                                    duration: 4,
+                                    repeat: Number.POSITIVE_INFINITY,
+                                    repeatType: "loop",
+                                }}
+                                className="w-16 h-16 bg-gradient-to-br from-blue-400 to-indigo-600 rounded-full flex items-center justify-center"
+                            >
+                                <MessageSquare className="w-8 h-8 text-white" />
+                            </motion.div>
+                        </div> */}
+                    </div>
+                </motion.div>
+            </div>
         </motion.div>
     )
 }

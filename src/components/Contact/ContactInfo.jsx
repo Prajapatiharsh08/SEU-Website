@@ -1,5 +1,7 @@
+"use client"
+
 import { motion } from "framer-motion"
-import { MapPin, Clock, Phone, Mail, Globe, Linkedin, Twitter, Instagram, Facebook } from "lucide-react"
+import { MapPin, Clock, Phone, Mail, Linkedin, Instagram } from "lucide-react"
 
 export default function ContactInfo() {
     const contactDetails = [
@@ -30,12 +32,24 @@ export default function ContactInfo() {
     ]
 
     const socialLinks = [
-        { icon: <Linkedin className="w-5 h-5" />, url: "https://www.linkedin.com/company/sudarsana-entrepreneurs-units-pvt-ltd/?viewAsMember=true", color: "bg-[#0077B5]" },
-        { icon: <Twitter className="w-5 h-5" />, url: "https://x.com/SEUnits_Pvt_LTD", color: "bg-[#1DA1F2]" },
+        {
+            icon: <Linkedin className="w-5 h-5" />,
+            url: "https://www.linkedin.com/company/sudarsana-entrepreneurs-units-pvt-ltd/?viewAsMember=true",
+            color: "bg-[#0077B5]",
+        },
+        {
+            icon: (
+                <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                </svg>
+            ),
+            url: "https://x.com/SEUnits_Pvt_LTD",
+            color: "bg-black",
+        },
         {
             icon: <Instagram className="w-5 h-5" />,
             url: "https://www.instagram.com/seunits.official?igsh=ejZvdThzc3Mzcnpr",
-            color: "bg-gradient-to-br from-[#833AB4] via-[#FD1D1D] to-[#FCAF45]",
+            color: "bg-gradient-to-br from-[#FF4081] via-[#F50057] to-[#D500F9]",  
         },
     ]
 
@@ -78,6 +92,7 @@ export default function ContactInfo() {
                             key={index}
                             href={social.url}
                             target="_blank"
+                            rel="noopener noreferrer"
                             className={`w-10 h-10 rounded-full ${social.color} flex items-center justify-center text-white`}
                             whileHover={{ y: -5, scale: 1.1 }}
                             whileTap={{ scale: 0.9 }}

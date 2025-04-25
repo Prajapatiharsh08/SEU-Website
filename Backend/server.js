@@ -22,7 +22,7 @@ app.use(helmet())
 app.use(express.json())
 app.use(
     cors({
-        origin: "http://localhost:5173", // Your frontend URL
+        origin: "https://seunits.com/", // Your frontend URL
         methods: ["POST"],
         credentials: true,
     }),
