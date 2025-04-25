@@ -165,7 +165,7 @@ export default function ServicesHero() {
                         className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-20 max-w-4xl mx-auto"
                     >
                         <div className="p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10">
-                            <div className="text-4xl font-bold text-blue-400 mb-2">12+</div>
+                            <div className="text-4xl font-bold text-blue-400 mb-2">5+</div>
                             <div className="text-white/70">Years Experience</div>
                         </div>
                         <div className="p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10">
