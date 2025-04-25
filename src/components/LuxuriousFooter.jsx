@@ -121,7 +121,7 @@ export default function LuxuriousFooter() {
 
                         <div className="flex items-center justify-center space-x-2 mb-4">
                             <div className="h-px w-12 bg-blue-500/50"></div>
-                            <span className="text-blue-400 text-sm uppercase tracking-widest">Est. 2024</span>
+                            <span className="text-blue-400 text-sm uppercase tracking-widest">Est. 2021</span>
                             <div className="h-px w-12 bg-blue-500/50"></div>
                         </div>
 
