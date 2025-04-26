@@ -1,13 +1,14 @@
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { Menu, X } from "lucide-react";
-import { Link, useNavigate } from "react-router-dom"; // ✅ Import useNavigate
+import { Link, useNavigate, useLocation } from "react-router-dom"; // ✅ Import useLocation
 
 export default function Navbar() {
     const navRef = useRef(null);
     const menuRef = useRef(null);
-    const navigate = useNavigate(); // ✅ Initialize navigate
-    const [pathname, setPathname] = useState(window.location.pathname);
+    const navigate = useNavigate();
+    const location = useLocation(); // ✅ Get current path
+    const pathname = location.pathname;
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     useEffect(() => {
@@ -44,13 +45,11 @@ export default function Navbar() {
         { name: "Home", href: "/" },
         { name: "About Us", href: "/about" },
         { name: "Services", href: "/services" },
-        // { name: "Careers", href: "/careers" },
         { name: "Contact", href: "/contact" },
     ];
 
     const handleNavigation = (href) => {
-        navigate(href); // ✅ Proper navigation
-        setPathname(href);
+        navigate(href);
         setIsMenuOpen(false);
     };
 
@@ -65,9 +64,9 @@ export default function Navbar() {
                 className="cursor-pointer z-50 flex items-center"
             >
                 <img
-                    src="/logo-transparent-svg.svg" // Update this path as per your file structure
+                    src="/logo-transparent-svg.svg"
                     alt="SEU Logo"
-                    className="h-16 sm:h-20 md:h-28 w-auto" // Adjust height for mobile, tablet, and desktop
+                    className="h-16 sm:h-20 md:h-28 w-auto"
                 />
             </div>
 
@@ -95,7 +94,7 @@ export default function Navbar() {
 
             {/* CTA Button */}
             <button className="hidden md:inline-block rounded-full border border-white/20 hover:bg-white/10 px-4 py-2 text-sm">
-            <Link to="/contact" className="block w-full h-full">Let's Collaborate</Link>
+                <Link to="/contact" className="block w-full h-full">Let's Collaborate</Link>
             </button>
 
             {/* Mobile Menu Toggle */}
